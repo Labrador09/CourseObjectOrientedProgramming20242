@@ -43,5 +43,37 @@ public class Ejecutar {
           System.out.println(c  +" Grados celsious a farenheit es: "+ gradoscelsius);
           System.out.println(f + " Grados farenheit a celsius es: "+ gradosfarenheit);
 
+        // Ejercicio 4
+        double salarioneto = 0.0;
+        double salariobruto = 0.0;
+        double deducciones = 0.0;
+        double comision = 0.0;
+        salariobruto = 1300000;
+        deducciones = salariobruto * 0.08;
+        comision = 150000;
+        double salarioneto1 = (salariobruto-deducciones) + comision; 
+        System.out.println( salarioneto1 + " Es el salario del empleado");
+        //Ejercicio 5
+        double d = 0;
+        double e = 0;
+        double p = 0;
+        p = 5000;
+        e = 0.00023;
+        d = 0.00025;
+        double Pesosaeuros = p * e;
+        double Pesosadolares = p * d;
+        System.out.println(p + " Pesos colombianos a euros son: " + Pesosaeuros);
+        System.out.println(p + " Pesos colombianos a dolares son: " + Pesosadolares);
+        double H = 5;
+        double v = 2000;
+        double i = 0;
+        i = (H * v) * 0.2;
+        double pago = (H * v) + i;
+        double total = H*v;
+        System.out.println("El total de horas fueron: " + H + "Significa que total de pago sin iva es de: "+ total + "Con iva y el total a pagar es de :"+ pago);
+
+
+
+
     }
 }
