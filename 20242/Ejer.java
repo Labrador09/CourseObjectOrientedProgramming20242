@@ -17,5 +17,8 @@ public class Ejer {
 
         System.out.println("el salario neto es: "+salarioneto);
     }
-
+    public static void main(String[] args){
+        Ejer obEjer = new Ejer();
+        obEjer.calcularSalarioneto();
+    }
 }
