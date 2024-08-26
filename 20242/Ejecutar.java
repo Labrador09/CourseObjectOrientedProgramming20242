@@ -44,14 +44,14 @@ public class Ejecutar {
           System.out.println(f + " Grados farenheit a celsius es: "+ gradosfarenheit);
 
         // Ejercicio 4
-        double salarioneto = 0.0;
-        double salariobruto = 0.0;
-        double deducciones = 0.0;
-        double comision = 0.0;
+        int salarioneto = 0;
+        int salariobruto = 0;
+        int deducciones = 0;
+        int comision = 0;
         salariobruto = 1300000;
-        deducciones = salariobruto * 0.08;
+        deducciones = 200000;
         comision = 150000;
-        double salarioneto1 = (salariobruto-deducciones) + comision; 
+        int salarioneto1 = (salariobruto-deducciones) + comision; 
         System.out.println( salarioneto1 + " Es el salario del empleado");
         //Ejercicio 5
         double d = 0;
@@ -77,3 +77,5 @@ public class Ejecutar {
 
     }
 }
+ 
+    
