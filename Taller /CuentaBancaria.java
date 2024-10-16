@@ -28,6 +28,11 @@ public class CuentaBancaria  {
         }
     }
     
+    public void estado(double cantidad){
+        System.out.println("El estado de su cuenta es "+ saldo);
+    }
+       
+    
     
 }
 
