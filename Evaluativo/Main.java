@@ -7,82 +7,62 @@ public class Main {
 
     ArrayList<Pedido> pedidos = new ArrayList<>();
 
-    Cliente cliente1 = crearCliente("1213234324", "James Rodriguez");
-    Cliente cliente2 = crearCliente("1123332323", "Juan Pérez");
-    Cliente cliente3 = crearCliente("2123123233", "María López");
+    Cliente cliente1 = new Cliente("1213234324", "James Rodriguez");
+    Cliente cliente2 = new Cliente("1123332323", "Jhon Duran");
+    Cliente cliente3 = new Cliente("2123123233", "Luiz Diaz");
+    
+    Foto foto1 = new Foto("Foto1.jpg");
+    Foto foto2 = new Foto("Foto2.jpg");
 
-    List<Camara> camarasCliente1 = new ArrayList<>();
+    List<Foto> fotos = new ArrayList<>();
+    fotos.add(foto1);
+    fotos.add(foto2);
 
-    camarasCliente1.add(crearCamara(102, "Logitech", "502"));
+    Producto impresion = new Impresion(1, "Negro y Blanco", fotos);
+    
 
-    List<Camara> camarasCliente2 = new ArrayList<>();
-    camarasCliente2.add(crearCamara(103, "Canon", "D50"));
+    Producto camaras1 = new Camara(101, "Sony", "X90");
+  
+  
+    List<Producto> productos1 = new ArrayList<>();
+    productos1.add(impresion);
+    productos1.add(camaras1);
+    
+    Pedido pedido = new Pedido(cliente1, (ArrayList<Producto>)productos1, new Date() , 1213234324 );
+    
+    System.out.println(" Cliente: "+ pedido.getCliente().getNombre());
+    System.out.println(" Cedula: "+ pedido.getCliente().getCedula());
 
-    List<Camara> camarasCliente3 = new ArrayList<>();
-    camarasCliente3.add(crearCamara(104, "Nikon", "Z5"));
-
-    pedidos.add(new Pedido(cliente1, new Date(), 1213234324, camarasCliente1));
-    pedidos.add(new Pedido(cliente2, new Date(), 1123332323, camarasCliente2));
-    pedidos.add(new Pedido(cliente3, new Date(), 2123123233, camarasCliente3));
-
-    for (Pedido pedido : pedidos) {
-      // Crear una impresión con fotos
-      Impresion impresion = crearImpresion(pedidos.indexOf(pedido) + 101, "Color");
-      agregarFoto(impresion, "foto1.jpg");
-      agregarFoto(impresion, "foto2.jpg");
-      agregarProducto(pedido, impresion);
-    }
-
-    for (Pedido pedido : pedidos) {
-      mostrarPedido(pedido);
-    }
-  }
-
-  public static Cliente crearCliente(String cedula, String nombre) {
-    Cliente Cliente = new Cliente(cedula, nombre);
-    return Cliente;
-  }
-
-  public static Impresion crearImpresion(int numero, String color) {
-    Impresion impresion = new Impresion(numero, color);
-    return impresion;
-  }
-
-  public static Camara crearCamara(int numero, String marca, String modelo) {
-    Camara camara = new Camara(numero, marca, modelo);
-    return camara;
-  }
-
-  public static void agregarProducto(Pedido pedido, Producto producto) {
-    pedido.addProducto(producto);
-
-  }
-
-  public static void agregarFoto(Impresion impresion, String fichero) {
-    Foto foto = new Foto(fichero);
-    impresion.addFoto(foto);
-
-  }
-
-  public static void mostrarPedido(Pedido pedido) {
-    System.out.println("\nMostrar el Pedido:");
-    System.out.println("Cliente: " + pedido.getCliente().getNombre());
-    System.out.println("Fecha: " + pedido.getFecha());
-    System.out.println("Número de tarjeta de crédito: " + pedido.getNumeroTarjetaCredito());
-    System.out.println("Productos en el pedido:");
-
-    for (Camara camara : pedido.getCamaras()) {
-      System.out.println("- Marca: " + camara.getMarca() + ", Modelo: " + camara.getModelo());
-    }
-    for (Producto producto : pedido.getProductos()) {
-      if (producto instanceof Impresion) {
-        Impresion impresion = (Impresion) producto;
-        System.out.println("- Impresión (Número: " + impresion.getNumero() + ", Color: " + impresion.getColor() + ")");
-        for (Foto foto : impresion.getFotos()) {
-          System.out.println("   Foto: " + foto);
+    System.out.println(" -Productos: ");
+    for(Producto producto : pedido.getProductos()) {
+      if(producto instanceof Impresion){
+        Impresion imp = (Impresion) producto;
+        System.out.println(" Impresion (numero: "+ imp.getNumero() + " color: "+ imp.getColor() + ")");
+        } else if (producto instanceof Camara){
+          Camara cam = (Camara) producto;
+          System.out.println(" Camara : Numero = "+ cam.getNumero() + " Marca: "+ cam.getMarca() + "Modelo: "+ cam.getModelo());
         }
-
       }
+      for (Foto foto : fotos){
+        System.out.println(foto);
     }
-  }
 }
+}
+    //pedidos.add(new Pedido(cliente1, new Date(), 1213234324, camarasCliente1));
+    //pedidos.add(new Pedido(cliente2, new Date(), 1123332323, camarasCliente2));
+    //pedidos.add(new Pedido(cliente3, new Date(), 2123123233, camarasCliente3));
+
+    //for (Pedido pedido : pedidos) {
+      // Crear una impresión con fotos
+      //Impresion impresion = crearImpresion(pedidos.indexOf(pedido) + 101, "Negro y Blanco");
+      //agregarFoto(impresion, "foto1.jpg");
+      //agregarFoto(impresion, "foto2.jpg");
+      //agregarProducto(pedido, impresion);
+    //}
+
+    //for (Pedido pedido : pedidos) {
+      //mostrarPedido(pedido);
+    //}
+  //}
+
+

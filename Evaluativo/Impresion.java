@@ -1,17 +1,14 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Impresion extends Producto {
     private String color;
     private ArrayList<Foto> fotos;
 
-    public Impresion(int numero, String color) {
+    public Impresion(int numero, String color, List<Foto> fotos) {
         super(numero);
         this.color = color;
         this.fotos = new ArrayList<>();
-    }
-
-    public void addFoto(Foto foto) {
-        this.fotos.add(foto);
     }
 
     public String getColor() {
@@ -29,6 +26,12 @@ public class Impresion extends Producto {
     public void setFotos(ArrayList<Foto> fotos) {
         this.fotos = fotos;
     }
+
+    @Override
+    public String toString() {
+        return "Impresion [color=" + color + ", fotos=" + fotos + "]";
+    }
+
 
     
 }

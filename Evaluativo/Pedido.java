@@ -8,14 +8,12 @@ public class Pedido {
     private ArrayList<Producto> productos;
     private Date fecha;
     private int numeroTargetaCredito;
-    private List<Camara> camaras;
 
-    public Pedido(Cliente cliente, Date fecha, int numeroTargetaCredito, List<Camara> camaras) {
+    public Pedido(Cliente cliente, ArrayList<Producto> productos, Date fecha, int numeroTargetaCredito) {
         this.cliente = cliente;
+        this.productos = productos;
         this.fecha = fecha;
         this.numeroTargetaCredito = numeroTargetaCredito;
-        this.productos = new ArrayList<>();
-        this.camaras = camaras;
     }
 
     public void addProducto(Producto producto) {
@@ -34,9 +32,6 @@ public class Pedido {
         return productos;
     }
 
-    public List<Camara> getCamaras() {
-        return camaras;
-    }
 
     public void setProductos(ArrayList<Producto> productos) {
         this.productos = productos;

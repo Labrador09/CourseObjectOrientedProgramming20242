@@ -20,7 +20,7 @@ public class Foto {
 
     @Override
     public String toString() {
-        return "Foto [fichero = " + fichero + ", Codigo: " + hashCode() + "]";
+        return " Imprimiedo foto :" + "fichero = " + fichero;
     }
     
 }
