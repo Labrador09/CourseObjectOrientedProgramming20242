@@ -8,8 +8,6 @@ public class Main {
     ArrayList<Pedido> pedidos = new ArrayList<>();
 
     Cliente cliente1 = new Cliente("1213234324", "James Rodriguez");
-    Cliente cliente2 = new Cliente("1123332323", "Jhon Duran");
-    Cliente cliente3 = new Cliente("2123123233", "Luiz Diaz");
     
     Foto foto1 = new Foto("Foto1.jpg");
     Foto foto2 = new Foto("Foto2.jpg");
@@ -48,21 +46,3 @@ public class Main {
     }
 }
 }
-    //pedidos.add(new Pedido(cliente1, new Date(), 1213234324, camarasCliente1));
-    //pedidos.add(new Pedido(cliente2, new Date(), 1123332323, camarasCliente2));
-    //pedidos.add(new Pedido(cliente3, new Date(), 2123123233, camarasCliente3));
-
-    //for (Pedido pedido : pedidos) {
-      // Crear una impresión con fotos
-      //Impresion impresion = crearImpresion(pedidos.indexOf(pedido) + 101, "Negro y Blanco");
-      //agregarFoto(impresion, "foto1.jpg");
-      //agregarFoto(impresion, "foto2.jpg");
-      //agregarProducto(pedido, impresion);
-    //}
-
-    //for (Pedido pedido : pedidos) {
-      //mostrarPedido(pedido);
-    //}
-  //}
-
-
