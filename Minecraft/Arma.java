@@ -37,7 +37,7 @@ public class Arma {
         public void atacar(Personaje oponente) {
             int daño = arma.causarDaño();
             oponente.recibirDaño(daño);
-            System.out.println(this.nombre + " ataca a "+ );
+            System.out.println(this.nombre + " ataca a " + oponente.getNombre() + " causando " + daño + "puntos de dano");
         }
 
         public void recibirDaño(int daño){
@@ -49,11 +49,7 @@ public class Arma {
           
         
         public boolean estaVivo(){
-            if (this.puntosDeVida < 0){
-                System.out.println("SE MURIO MUY NOOB :,(");    
-          } else if(this.puntosDeVida > 0){
-            System.out.println("Siguo vivo bro");
-        }
+            return this.puntosDeVida > 0;
         }
 
         public String getNombre() {
