@@ -5,6 +5,7 @@ public class Piso {
     private int numero;
     protected BotonAn botonSubida;
     protected BotonAn botonBajada;
+    
 
     public Piso(int numero) {
         this.numero = numero;

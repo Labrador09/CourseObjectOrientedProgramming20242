@@ -19,11 +19,13 @@ public class Ascensorejecutar {
         sistemaControl.solicitarLlamada(7, 3, "Bajar");
         sistemaControl.manejarFalla("falla la puerta");
 
-        
+        sistemaControl.procesarSolicitudes();
 
         sistemaControl.estadoAscensor();
 
         sistemaControl.moverAscensor(1);
+        
+        sistemaControl.estadoAscensor();
 
         }
         

@@ -2,6 +2,7 @@ package EvalutivoFinal;
 
 public class Puerta {
     private boolean abierta;
+    
    
 
     public Puerta() {
